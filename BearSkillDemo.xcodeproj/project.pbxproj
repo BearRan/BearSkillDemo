@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182E10A21C64A5FF00570002 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		183532BC1C648FFE00014B86 /* BearSkillDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BearSkillDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		183532C01C648FFE00014B86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		183532C21C648FFE00014B86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 				183532C31C648FFE00014B86 /* AppDelegate.m */,
 				183532C51C648FFE00014B86 /* ViewController.h */,
 				183532C61C648FFE00014B86 /* ViewController.m */,
+				182E10A21C64A5FF00570002 /* PrefixHeader.pch */,
 				183532C81C648FFE00014B86 /* Main.storyboard */,
 				183532CB1C648FFE00014B86 /* Assets.xcassets */,
 				183532CD1C648FFE00014B86 /* LaunchScreen.storyboard */,
@@ -489,6 +491,7 @@
 			baseConfigurationReference = 9EF10F427911159A8157CB51 /* Pods-BearSkillDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BearSkillDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = BearSkillDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuntu.text.BearSkillDemo;
@@ -501,6 +504,7 @@
 			baseConfigurationReference = 4E4C0D6B317C6A312B1E9740 /* Pods-BearSkillDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BearSkillDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = BearSkillDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuntu.text.BearSkillDemo;
