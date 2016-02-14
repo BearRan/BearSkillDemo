@@ -5,7 +5,7 @@
 
 target 'BearSkillDemo' do
 
-pod 'BearSkill'
+pod 'BearSkill', '0.0.6'
 
 end
 

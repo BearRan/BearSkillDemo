@@ -38,7 +38,6 @@
 {
     if (self.startLayout == YES) {
         [UIView animateWithDuration:0.5f animations:^{
-            NSLog(@"--1");
             [UIView BearAutoLayViewArray:self.subViewArray layoutAxis:self.layoutAxis center:self.center offStart:self.changeValue_offStart.value offEnd:self.changeValue_offEnd.value gapDistance:self.changeValue_gap.value];
         }];
     }
