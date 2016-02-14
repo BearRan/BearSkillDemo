@@ -7,9 +7,12 @@
 //
 
 #import "BaseViewController.h"
-#import "AutoLayoutSubViews.h"
+#import "AutoLayoutSubViewController1.h"
 
-static NSString *cell_autoLauoutSubViews = @"autoLauoutSubViews";
+static NSString *cell_autoLauoutSubViews1 = @"AutoLayoutSubViewController1";
+static NSString *cell_autoLauoutSubViews2 = @"AutoLayoutSubViewController2";
+static NSString *cell_autoLauoutSubViews3 = @"AutoLayoutSubViewController3";
+static NSString *cell_autoLauoutSubViews4 = @"AutoLayoutSubViewController4";
 
 @interface BaseViewController () <UITableViewDataSource, UITableViewDelegate>
 {
@@ -28,7 +31,12 @@ static NSString *cell_autoLauoutSubViews = @"autoLauoutSubViews";
 
 - (void)viewDidLoad
 {
-    tableDataArray = [[NSArray alloc] initWithObjects:cell_autoLauoutSubViews, nil];
+    tableDataArray = [[NSArray alloc] initWithObjects:
+                      cell_autoLauoutSubViews1,
+                      cell_autoLauoutSubViews2,
+                      cell_autoLauoutSubViews3,
+                      cell_autoLauoutSubViews4,
+                      nil];
     
     tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
     tableView.delegate = self;
@@ -57,8 +65,8 @@ static NSString *cell_autoLauoutSubViews = @"autoLauoutSubViews";
 {
     NSInteger row = indexPath.row;
     
-    if ([tableDataArray[row] isEqualToString:cell_autoLauoutSubViews]) {
-        AutoLayoutSubViews *destinationVC = [[AutoLayoutSubViews alloc] init];
+    if ([tableDataArray[row] isEqualToString:cell_autoLauoutSubViews1]) {
+        AutoLayoutSubViewController1 *destinationVC = [[AutoLayoutSubViewController1 alloc] init];
         [self.navigationController pushViewController:destinationVC animated:YES];
     }
 }

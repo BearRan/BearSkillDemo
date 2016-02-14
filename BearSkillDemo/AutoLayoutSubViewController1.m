@@ -1,21 +1,14 @@
 //
-//  AutoLayoutSubViews.m
+//  AutoLayoutSubViewController1.m
 //  BearSkillDemo
 //
 //  Created by apple on 16/2/14.
 //  Copyright © 2016年 apple. All rights reserved.
 //
 
-#import "AutoLayoutSubViews.h"
+#import "AutoLayoutSubViewController1.h"
 
-@interface AutoLayoutSubViews ()
-{
-    
-}
-
-@end
-
-@implementation AutoLayoutSubViews
+@implementation AutoLayoutSubViewController1
 
 - (void)viewDidLoad
 {

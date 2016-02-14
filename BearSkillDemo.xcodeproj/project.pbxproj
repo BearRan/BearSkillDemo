@@ -15,9 +15,12 @@
 		183532DA1C648FFE00014B86 /* BearSkillDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 183532D91C648FFE00014B86 /* BearSkillDemoTests.m */; };
 		183532E51C648FFE00014B86 /* BearSkillDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 183532E41C648FFE00014B86 /* BearSkillDemoUITests.m */; };
 		18EC84CE1C701853009D3BD7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84CD1C701853009D3BD7 /* BaseViewController.m */; };
-		18EC84D11C701A1F009D3BD7 /* AutoLayoutSubViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84D01C701A1F009D3BD7 /* AutoLayoutSubViews.m */; };
 		18EC84D41C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84D31C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m */; };
 		18EC84D71C702C0D009D3BD7 /* ChangeValueWithBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84D61C702C0D009D3BD7 /* ChangeValueWithBtnView.m */; };
+		18EC84DA1C70687F009D3BD7 /* AutoLayoutSubViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84D91C70687F009D3BD7 /* AutoLayoutSubViewController1.m */; };
+		18EC84DD1C706897009D3BD7 /* AutoLayoutSubViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84DC1C706897009D3BD7 /* AutoLayoutSubViewController2.m */; };
+		18EC84E01C70689F009D3BD7 /* AutoLayoutSubViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84DF1C70689F009D3BD7 /* AutoLayoutSubViewController3.m */; };
+		18EC84E31C7068A9009D3BD7 /* AutoLayoutSubViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84E21C7068A9009D3BD7 /* AutoLayoutSubViewController4.m */; };
 		195858B0E99DF642EE8F12E9 /* libPods-BearSkillDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE325E485BC36FC154790270 /* libPods-BearSkillDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -56,12 +59,18 @@
 		183532E61C648FFE00014B86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18EC84CC1C701853009D3BD7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		18EC84CD1C701853009D3BD7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		18EC84CF1C701A1F009D3BD7 /* AutoLayoutSubViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutSubViews.h; sourceTree = "<group>"; };
-		18EC84D01C701A1F009D3BD7 /* AutoLayoutSubViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutSubViews.m; sourceTree = "<group>"; };
 		18EC84D21C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutSubViewsModelController.h; sourceTree = "<group>"; };
 		18EC84D31C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutSubViewsModelController.m; sourceTree = "<group>"; };
 		18EC84D51C702C0D009D3BD7 /* ChangeValueWithBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeValueWithBtnView.h; sourceTree = "<group>"; };
 		18EC84D61C702C0D009D3BD7 /* ChangeValueWithBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeValueWithBtnView.m; sourceTree = "<group>"; };
+		18EC84D81C70687F009D3BD7 /* AutoLayoutSubViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutSubViewController1.h; sourceTree = "<group>"; };
+		18EC84D91C70687F009D3BD7 /* AutoLayoutSubViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutSubViewController1.m; sourceTree = "<group>"; };
+		18EC84DB1C706897009D3BD7 /* AutoLayoutSubViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutSubViewController2.h; sourceTree = "<group>"; };
+		18EC84DC1C706897009D3BD7 /* AutoLayoutSubViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutSubViewController2.m; sourceTree = "<group>"; };
+		18EC84DE1C70689F009D3BD7 /* AutoLayoutSubViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutSubViewController3.h; sourceTree = "<group>"; };
+		18EC84DF1C70689F009D3BD7 /* AutoLayoutSubViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutSubViewController3.m; sourceTree = "<group>"; };
+		18EC84E11C7068A9009D3BD7 /* AutoLayoutSubViewController4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutSubViewController4.h; sourceTree = "<group>"; };
+		18EC84E21C7068A9009D3BD7 /* AutoLayoutSubViewController4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutSubViewController4.m; sourceTree = "<group>"; };
 		4E4C0D6B317C6A312B1E9740 /* Pods-BearSkillDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearSkillDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BearSkillDemo/Pods-BearSkillDemo.release.xcconfig"; sourceTree = "<group>"; };
 		9EF10F427911159A8157CB51 /* Pods-BearSkillDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearSkillDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BearSkillDemo/Pods-BearSkillDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		AE325E485BC36FC154790270 /* libPods-BearSkillDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BearSkillDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,12 +131,8 @@
 				183532C31C648FFE00014B86 /* AppDelegate.m */,
 				18EC84CC1C701853009D3BD7 /* BaseViewController.h */,
 				18EC84CD1C701853009D3BD7 /* BaseViewController.m */,
-				18EC84D21C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.h */,
-				18EC84D31C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m */,
-				18EC84D51C702C0D009D3BD7 /* ChangeValueWithBtnView.h */,
-				18EC84D61C702C0D009D3BD7 /* ChangeValueWithBtnView.m */,
-				18EC84CF1C701A1F009D3BD7 /* AutoLayoutSubViews.h */,
-				18EC84D01C701A1F009D3BD7 /* AutoLayoutSubViews.m */,
+				18EC84E41C706961009D3BD7 /* AutoLayoutSubViewsModel */,
+				18EC84E51C706973009D3BD7 /* AutoLayoutSubViewsModelController */,
 				182E10A21C64A5FF00570002 /* PrefixHeader.pch */,
 				183532C81C648FFE00014B86 /* Main.storyboard */,
 				183532CB1C648FFE00014B86 /* Assets.xcassets */,
@@ -162,6 +167,32 @@
 				183532E61C648FFE00014B86 /* Info.plist */,
 			);
 			path = BearSkillDemoUITests;
+			sourceTree = "<group>";
+		};
+		18EC84E41C706961009D3BD7 /* AutoLayoutSubViewsModel */ = {
+			isa = PBXGroup;
+			children = (
+				18EC84D51C702C0D009D3BD7 /* ChangeValueWithBtnView.h */,
+				18EC84D61C702C0D009D3BD7 /* ChangeValueWithBtnView.m */,
+				18EC84D21C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.h */,
+				18EC84D31C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m */,
+			);
+			name = AutoLayoutSubViewsModel;
+			sourceTree = "<group>";
+		};
+		18EC84E51C706973009D3BD7 /* AutoLayoutSubViewsModelController */ = {
+			isa = PBXGroup;
+			children = (
+				18EC84D81C70687F009D3BD7 /* AutoLayoutSubViewController1.h */,
+				18EC84D91C70687F009D3BD7 /* AutoLayoutSubViewController1.m */,
+				18EC84DB1C706897009D3BD7 /* AutoLayoutSubViewController2.h */,
+				18EC84DC1C706897009D3BD7 /* AutoLayoutSubViewController2.m */,
+				18EC84DE1C70689F009D3BD7 /* AutoLayoutSubViewController3.h */,
+				18EC84DF1C70689F009D3BD7 /* AutoLayoutSubViewController3.m */,
+				18EC84E11C7068A9009D3BD7 /* AutoLayoutSubViewController4.h */,
+				18EC84E21C7068A9009D3BD7 /* AutoLayoutSubViewController4.m */,
+			);
+			name = AutoLayoutSubViewsModelController;
 			sourceTree = "<group>";
 		};
 		76F4133C8B0D31A511A4B318 /* Pods */ = {
@@ -364,11 +395,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				18EC84D41C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m in Sources */,
+				18EC84DA1C70687F009D3BD7 /* AutoLayoutSubViewController1.m in Sources */,
 				18EC84D71C702C0D009D3BD7 /* ChangeValueWithBtnView.m in Sources */,
+				18EC84DD1C706897009D3BD7 /* AutoLayoutSubViewController2.m in Sources */,
 				183532C41C648FFE00014B86 /* AppDelegate.m in Sources */,
 				18EC84CE1C701853009D3BD7 /* BaseViewController.m in Sources */,
-				18EC84D11C701A1F009D3BD7 /* AutoLayoutSubViews.m in Sources */,
+				18EC84E31C7068A9009D3BD7 /* AutoLayoutSubViewController4.m in Sources */,
 				183532C11C648FFE00014B86 /* main.m in Sources */,
+				18EC84E01C70689F009D3BD7 /* AutoLayoutSubViewController3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
