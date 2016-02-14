@@ -69,6 +69,17 @@
     _centerBtn.titleLabel.font = btnFont;
     [leftDashView addSubview:_centerBtn];
     [_centerBtn BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
+    
+    _changeValueBtn = [[ChangeValueWithBtnView alloc] initWithFrame:CGRectMake(0, 0, 40, 80)];
+    [_dashBoardView addSubview:_changeValueBtn];
+    [_changeValueBtn BearSetRelativeLayoutWithDirection:kDIR_RIGHT destinationView:nil parentRelation:YES distance:40 center:YES];
+    
+    UILabel *noticeLabel = [[UILabel alloc] init];
+    noticeLabel.text = @"相对距离";
+    noticeLabel.textColor = [UIColor whiteColor];
+    noticeLabel.font = [UIFont systemFontOfSize:14.0f];
+    [_dashBoardView addSubview:noticeLabel];
+    [noticeLabel BearSetRelativeLayoutWithDirection:kDIR_UP destinationView:_changeValueBtn parentRelation:NO distance:0 center:YES sizeToFit:YES];
 }
 
 @end
