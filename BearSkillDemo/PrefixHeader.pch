@@ -15,4 +15,6 @@
 #import "UITextField+BearSet.h"
 #import "UIView+BearSet.h"
 
+#import "AppDelegate.h"
+
 #endif /* PrefixHeader_pch */

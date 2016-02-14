@@ -30,6 +30,37 @@
     [self createPerformanceView];
 }
 
+
+//  布局演示界面
+- (void)createPerformanceView
+{
+    CGFloat gapWidth    = 30;
+    CGFloat viewWidth   = 40;
+    CGFloat viewHeight  = 40;
+    
+    _canvasView = [[UIView alloc] initWithFrame:CGRectMake(gapWidth, NAV_STA + gapWidth, WIDTH - gapWidth * 2, _dashBoardView.y - NAV_STA - gapWidth * 2)];
+    _canvasView.backgroundColor = [UIColor colorWithRed:0 green:0.98 blue:0.4 alpha:1.0f];
+    [self.view addSubview:_canvasView];
+    
+    _subViewArray = [[NSMutableArray alloc] init];
+    NSArray *colcorArray = [[NSArray alloc] initWithObjects:
+                            [UIColor orangeColor],
+                            [UIColor yellowColor],
+                            [UIColor blueColor],
+                            [UIColor purpleColor],
+                            [UIColor grayColor],
+                            nil];
+    
+    for (int i = 0; i < [colcorArray count]; i++) {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(10 * i, 10 * i, viewWidth, viewHeight)];
+        view.backgroundColor = colcorArray[i];
+        [_canvasView addSubview:view];
+        [_subViewArray addObject:view];
+    }
+}
+
+
+//  搭建控制台
 - (void)buildDashBoard
 {
     CGFloat btn_height  = 30;
@@ -46,6 +77,9 @@
     [_dashBoardView addSubview:_startLayoutBtn];
     [subViewArray addObject:_startLayoutBtn];
     
+    
+    _layoutAxis = kLAYOUT_AXIS_X;
+    
     _changeAxisBtn = [[UIButton alloc] init];
     [_changeAxisBtn setTitle:@"X轴" forState:UIControlStateNormal];
     _changeAxisBtn.titleLabel.font = textFont;
@@ -54,6 +88,9 @@
     [_changeAxisBtn addTarget:self action:@selector(changeAxisBtn_Event:) forControlEvents:UIControlEventTouchUpInside];
     [_dashBoardView addSubview:_changeAxisBtn];
     [subViewArray addObject:_changeAxisBtn];
+    
+    
+    _center = YES;
     
     _centerSelectBtn = [[UIButton alloc] init];
     [_centerSelectBtn setTitle:@"居中" forState:UIControlStateNormal];
@@ -67,7 +104,7 @@
     
     
     //  三个调整值的view
-    CGFloat changeView_width    = 30;
+    CGFloat changeView_width    = 40;
     CGFloat changeView_height   = 80;
     
     if (_showControl_gap == YES) {
@@ -125,44 +162,27 @@
 }
 
 
-//  布局演示界面
-- (void)createPerformanceView
-{
-    CGFloat gapWidth    = 30;
-    CGFloat viewWidth   = 40;
-    CGFloat viewHeight  = 40;
-    
-    _canvasView = [[UIView alloc] initWithFrame:CGRectMake(gapWidth, NAV_STA + gapWidth, WIDTH - gapWidth * 2, _dashBoardView.y - NAV_STA - gapWidth * 2)];
-    _canvasView.backgroundColor = [UIColor colorWithRed:0 green:0.98 blue:0.4 alpha:1.0f];
-    [self.view addSubview:_canvasView];
-    
-    _subViewArray = [[NSMutableArray alloc] init];
-    NSArray *colcorArray = [[NSArray alloc] initWithObjects:
-                            [UIColor orangeColor],
-                            [UIColor yellowColor],
-                            [UIColor blueColor],
-                            [UIColor purpleColor],
-                            [UIColor grayColor],
-                            nil];
-    
-    for (int i = 0; i < [colcorArray count]; i++) {
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(10 * i, 10 * i, viewWidth, viewHeight)];
-        view.backgroundColor = colcorArray[i];
-        [_canvasView addSubview:view];
-        [_subViewArray addObject:view];
-    }
-}
-
-
 //  点击事件
 - (void)startLayoutBtn_Event:(UIButton *)sender
-{}
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:UpdateLayoutNoticeStr object:nil];
+}
 
 - (void)changeAxisBtn_Event:(UIButton *)sender
-{}
+{
+    if (_layoutAxis == kLAYOUT_AXIS_X) {
+        _layoutAxis = kLAYOUT_AXIS_Y;
+    }else{
+        _layoutAxis = kLAYOUT_AXIS_X;
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:UpdateLayoutNoticeStr object:nil];
+}
 
 - (void)centerSelectBtn_Event:(UIButton *)sender
-{}
+{
+    _center = !_center;
+    [[NSNotificationCenter defaultCenter] postNotificationName:UpdateLayoutNoticeStr object:nil];
+}
 
 
 @end
