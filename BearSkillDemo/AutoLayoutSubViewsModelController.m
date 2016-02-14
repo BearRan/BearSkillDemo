@@ -21,8 +21,6 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    [self createDashBoard];
 }
 
 - (void)createDashBoard
@@ -62,48 +60,63 @@
     [subViewArray addObject:_centerSelectBtn];
     
     
+    
     //  三个调整值的view
     CGFloat changeView_width    = 30;
     CGFloat changeView_height   = 80;
     
-    _changeValue_gap = [[ChangeValueWithBtnView alloc] initWithFrame:CGRectMake(0, 0, changeView_width, changeView_height)];
-    [dashBoardView addSubview:_changeValue_gap];
-    [subViewArray addObject:_changeValue_gap];
+    if (_showControl_gap == YES) {
+        _changeValue_gap = [[ChangeValueWithBtnView alloc] initWithFrame:CGRectMake(0, 0, changeView_width, changeView_height)];
+        [dashBoardView addSubview:_changeValue_gap];
+        [subViewArray addObject:_changeValue_gap];
+    }
     
-    _changeValue_offStart = [[ChangeValueWithBtnView alloc] initWithFrame:CGRectMake(0, 0, changeView_width, changeView_height)];
-    [dashBoardView addSubview:_changeValue_offStart];
-    [subViewArray addObject:_changeValue_offStart];
+    if (_showControl_offStart == YES) {
+        _changeValue_offStart = [[ChangeValueWithBtnView alloc] initWithFrame:CGRectMake(0, 0, changeView_width, changeView_height)];
+        [dashBoardView addSubview:_changeValue_offStart];
+        [subViewArray addObject:_changeValue_offStart];
+    }
     
-    _changeValue_offEnd = [[ChangeValueWithBtnView alloc] initWithFrame:CGRectMake(0, 0, changeView_width, changeView_height)];
-    [dashBoardView addSubview:_changeValue_offEnd];
-    [subViewArray addObject:_changeValue_offEnd];
+    if (_showControl_offEnd == YES) {
+        _changeValue_offEnd = [[ChangeValueWithBtnView alloc] initWithFrame:CGRectMake(0, 0, changeView_width, changeView_height)];
+        [dashBoardView addSubview:_changeValue_offEnd];
+        [subViewArray addObject:_changeValue_offEnd];
+    }
     
     [UIView BearAutoLayViewArray:subViewArray layoutAxis:kLAYOUT_AXIS_X center:YES];
+    
     
     
     //  三个调整值的view的说明label
     UIFont *labelFont = [UIFont systemFontOfSize:11.0f];
     
-    _gapLabel = [[UILabel alloc] init];
-    _gapLabel.text = @"间距";
-    _gapLabel.textColor = [UIColor whiteColor];
-    _gapLabel.font = labelFont;
-    [dashBoardView addSubview:_gapLabel];
-    [_gapLabel BearSetRelativeLayoutWithDirection:kDIR_UP destinationView:_changeValue_gap parentRelation:NO distance:5.0f center:YES sizeToFit:YES];
-
-    _offStartLabel = [[UILabel alloc] init];
-    _offStartLabel.text = @"offStart";
-    _offStartLabel.textColor = [UIColor whiteColor];
-    _offStartLabel.font = labelFont;
-    [dashBoardView addSubview:_offStartLabel];
-    [_offStartLabel BearSetRelativeLayoutWithDirection:kDIR_UP destinationView:_changeValue_offStart parentRelation:NO distance:5.0f center:YES sizeToFit:YES];
+    if (_showControl_gap == YES) {
+        _gapLabel = [[UILabel alloc] init];
+        _gapLabel.text = @"间距";
+        _gapLabel.textColor = [UIColor whiteColor];
+        _gapLabel.font = labelFont;
+        [dashBoardView addSubview:_gapLabel];
+        [_gapLabel BearSetRelativeLayoutWithDirection:kDIR_UP destinationView:_changeValue_gap parentRelation:NO distance:5.0f center:YES sizeToFit:YES];
+    }
     
-    _offEndLabel = [[UILabel alloc] init];
-    _offEndLabel.text = @"offEnd";
-    _offEndLabel.textColor = [UIColor whiteColor];
-    _offEndLabel.font = labelFont;
-    [dashBoardView addSubview:_offEndLabel];
-    [_offEndLabel BearSetRelativeLayoutWithDirection:kDIR_UP destinationView:_changeValue_offEnd parentRelation:NO distance:5.0f center:YES sizeToFit:YES];
+    if (_showControl_offStart == YES) {
+        _offStartLabel = [[UILabel alloc] init];
+        _offStartLabel.text = @"offStart";
+        _offStartLabel.textColor = [UIColor whiteColor];
+        _offStartLabel.font = labelFont;
+        [dashBoardView addSubview:_offStartLabel];
+        [_offStartLabel BearSetRelativeLayoutWithDirection:kDIR_UP destinationView:_changeValue_offStart parentRelation:NO distance:5.0f center:YES sizeToFit:YES];
+    }
+    
+    if (_showControl_offEnd == YES) {
+        _offEndLabel = [[UILabel alloc] init];
+        _offEndLabel.text = @"offEnd";
+        _offEndLabel.textColor = [UIColor whiteColor];
+        _offEndLabel.font = labelFont;
+        [dashBoardView addSubview:_offEndLabel];
+        [_offEndLabel BearSetRelativeLayoutWithDirection:kDIR_UP destinationView:_changeValue_offEnd parentRelation:NO distance:5.0f center:YES sizeToFit:YES];
+    }
+
 }
 
 @end

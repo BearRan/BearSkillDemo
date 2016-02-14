@@ -23,4 +23,10 @@
 @property (strong, nonatomic) UILabel   *offStartLabel;
 @property (strong, nonatomic) UILabel   *offEndLabel;
 
+@property (assign, nonatomic) BOOL  showControl_gap;
+@property (assign, nonatomic) BOOL  showControl_offStart;
+@property (assign, nonatomic) BOOL  showControl_offEnd;
+
+- (void)createDashBoard;
+
 @end
