@@ -10,7 +10,7 @@
 
 @implementation ChangeValueWithBtnView
 
-static float deltaValue = 0.5;
+static float deltaValue = 1.5;
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -67,6 +67,8 @@ static float deltaValue = 0.5;
 {
     _value = _value + deltaValue;
     _valueLabel.text = [NSString stringWithFormat:@"%.1f", _value];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:UpdateLayoutNoticeStr object:nil];
 }
 
 - (void)minusBtn_Event
@@ -78,6 +80,8 @@ static float deltaValue = 0.5;
     
     _value = _value - deltaValue;
     _valueLabel.text = [NSString stringWithFormat:@"%.1f", _value];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:UpdateLayoutNoticeStr object:nil];
 }
 
 @end
