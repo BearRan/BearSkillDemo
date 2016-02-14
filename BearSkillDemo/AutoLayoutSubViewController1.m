@@ -41,4 +41,23 @@
     }];
 }
 
+
+/**
+ *  最简代码使用demo (不能运行，只能说明最简使用方法)
+ */
+- (void)simpleCodeExplain
+{
+    NSMutableArray *subViewArray = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < 5; i++) {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+        [self.view addSubview:view];
+        [subViewArray addObject:view];
+    }
+    
+    //  自动布局
+    [UIView BearAutoLayViewArray:subViewArray layoutAxis:kLAYOUT_AXIS_X center:YES];
+}
+
+
 @end
