@@ -13,7 +13,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     self.navigationController.navigationBarHidden = NO;
-    self.title = @"AutoLayoutSubViews";
+    self.title = @"RelativeLayout";
 }
 
 - (void)viewDidLoad
