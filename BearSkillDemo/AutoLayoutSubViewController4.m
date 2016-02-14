@@ -31,7 +31,7 @@
     self.showControl_offEnd     = YES;
     [self buildDashBoard];
     
-    self.explainTextView.text = @"根据子view自动布局 需要设置:间距; 自动计算:起始点，结束点\n说明： 在父类view尺寸不等于需求尺寸时，会显示日志并且取消布局\n+ (void)BearAutoLayViewArray:(NSMutableArray *)viewArray layoutAxis:(kLAYOUT_AXIS)layoutAxis center:(BOOL)center gapDistance:(CGFloat)gapDistance;";
+    self.explainTextView.text = @"根据子view自动布局 需要设置:起始点，结束点，间距\n说明： 在父类view尺寸不等于需求尺寸时，会自动变化\n+ (void)BearAutoLayViewArray:(NSMutableArray *)viewArray layoutAxis:(kLAYOUT_AXIS)layoutAxis center:(BOOL)center offStart:(CGFloat)offStart offEnd:(CGFloat)offEnd gapDistance:(CGFloat)gapDistance;";
 }
 
 - (void)updateLayout
