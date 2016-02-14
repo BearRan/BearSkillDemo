@@ -21,6 +21,7 @@ static NSString *cell_autoLauoutSubViews4 = @"AutoLayoutSubViewController4";
 {
     UITableView *tableView;
     NSArray     *tableDataArray;
+    NSArray     *descriptionArray;
 }
 
 @end
@@ -40,6 +41,13 @@ static NSString *cell_autoLauoutSubViews4 = @"AutoLayoutSubViewController4";
                       cell_autoLauoutSubViews3,
                       cell_autoLauoutSubViews4,
                       nil];
+    
+    descriptionArray = [[NSArray alloc] initWithObjects:
+                        @"根据子view自动布局 自动计算:起始点，结束点，间距（三值相等）",
+                        @"根据子view自动布局 需要设置:起始点，结束点; 自动计算:间距",
+                        @"根据子view自动布局 需要设置:间距; 自动计算:起始点，结束点",
+                        @"根据子view自动布局 需要设置:起始点，结束点，间距",
+                        nil];
     
     tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
     tableView.delegate = self;
@@ -61,7 +69,17 @@ static NSString *cell_autoLauoutSubViews4 = @"AutoLayoutSubViewController4";
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.text = tableDataArray[row];
     
+    UILabel *detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 30, WIDTH - 30, 30)];
+    detailLabel.font = [UIFont systemFontOfSize:11.0f];
+    detailLabel.text = descriptionArray[row];
+    [cell addSubview:detailLabel];
+   
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 55;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
