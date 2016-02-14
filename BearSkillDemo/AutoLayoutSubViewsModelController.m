@@ -68,6 +68,8 @@
     
     NSMutableArray *subViewArray = [[NSMutableArray alloc] init];
     
+    _startLayout = NO;
+    
     _startLayoutBtn = [[UIButton alloc] init];
     [_startLayoutBtn setTitle:@"开始布局" forState:UIControlStateNormal];
     _startLayoutBtn.titleLabel.font = textFont;
@@ -81,7 +83,7 @@
     _layoutAxis = kLAYOUT_AXIS_X;
     
     _changeAxisBtn = [[UIButton alloc] init];
-    [_changeAxisBtn setTitle:@"X轴" forState:UIControlStateNormal];
+    [_changeAxisBtn setTitle:@"X轴布局" forState:UIControlStateNormal];
     _changeAxisBtn.titleLabel.font = textFont;
     [_changeAxisBtn sizeToFit];
     [_changeAxisBtn setHeight:btn_height];
@@ -165,25 +167,65 @@
 //  点击事件
 - (void)startLayoutBtn_Event:(UIButton *)sender
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:UpdateLayoutNoticeStr object:nil];
+    if (_startLayout == YES) {
+        _startLayout = NO;
+        [sender setTitle:@"开始布局" forState:UIControlStateNormal];
+    }
+    else{
+        _startLayout = YES;
+        [sender setTitle:@"重置布局" forState:UIControlStateNormal];
+    }
+    
+    [self updateLayoutView];
 }
 
 - (void)changeAxisBtn_Event:(UIButton *)sender
 {
     if (_layoutAxis == kLAYOUT_AXIS_X) {
         _layoutAxis = kLAYOUT_AXIS_Y;
-    }else{
-        _layoutAxis = kLAYOUT_AXIS_X;
+        [sender setTitle:@"Y轴布局" forState:UIControlStateNormal];
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:UpdateLayoutNoticeStr object:nil];
+    else{
+        _layoutAxis = kLAYOUT_AXIS_X;
+        [sender setTitle:@"X轴布局" forState:UIControlStateNormal];
+    }
+    
+    [self updateLayoutView];
 }
 
 - (void)centerSelectBtn_Event:(UIButton *)sender
 {
-    _center = !_center;
-    [[NSNotificationCenter defaultCenter] postNotificationName:UpdateLayoutNoticeStr object:nil];
+    if (_center == YES) {
+        _center = NO;
+        [sender setTitle:@"不居中" forState:UIControlStateNormal];
+        [sender sizeToFit];
+    }
+    else{
+        _center = YES;
+        [sender setTitle:@"居中" forState:UIControlStateNormal];
+        [sender sizeToFit];
+    }
+    
+    [self updateLayoutView];
 }
 
+- (void)updateLayoutView
+{
+    //  自动布局
+    if (_startLayout == YES) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:UpdateLayoutNoticeStr object:nil];
+    }
+    
+    //  重置布局
+    else{
+        [UIView animateWithDuration:0.5f animations:^{
+            for (int i = 0; i < [_subViewArray count]; i++) {
+                UIView *view = _subViewArray[i];
+                [view setOrigin:CGPointMake(10 * i, 10 * i)];
+            }
+        }];
+    }
+}
 
 @end
 

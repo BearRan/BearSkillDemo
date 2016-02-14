@@ -29,6 +29,7 @@
 @property (assign, nonatomic) BOOL  showControl_offStart;
 @property (assign, nonatomic) BOOL  showControl_offEnd;
 
+@property (assign, nonatomic) BOOL          startLayout;
 @property (assign, nonatomic) kLAYOUT_AXIS  layoutAxis;
 @property (assign, nonatomic) BOOL          center;
 
