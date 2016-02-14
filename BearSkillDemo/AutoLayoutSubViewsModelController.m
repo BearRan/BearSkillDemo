@@ -34,11 +34,17 @@
 //  布局演示界面
 - (void)createPerformanceView
 {
+    //  代码说明TextView
+    _explainTextView = [[UITextView alloc] initWithFrame:CGRectMake(10, _dashBoardView.y - 60 - 5, WIDTH - 20, 60)];
+    _explainTextView.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:_explainTextView];
+    
+    
     CGFloat gapWidth    = 30;
     CGFloat viewWidth   = 40;
     CGFloat viewHeight  = 40;
     
-    _canvasView = [[UIView alloc] initWithFrame:CGRectMake(gapWidth, NAV_STA + gapWidth, WIDTH - gapWidth * 2, _dashBoardView.y - NAV_STA - gapWidth * 2)];
+    _canvasView = [[UIView alloc] initWithFrame:CGRectMake(gapWidth, NAV_STA + gapWidth, WIDTH - gapWidth * 2, _explainTextView.y - NAV_STA - gapWidth * 2)];
     _canvasView.backgroundColor = [UIColor colorWithRed:0 green:0.98 blue:0.4 alpha:1.0f];
     [self.view addSubview:_canvasView];
     

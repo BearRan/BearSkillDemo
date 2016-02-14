@@ -12,10 +12,12 @@
 @interface AutoLayoutSubViewsModelController : UIViewController
 
 //  DashBoard
-@property (strong, nonatomic) UIView    *dashBoardView;
-@property (strong, nonatomic) UIButton  *startLayoutBtn;
-@property (strong, nonatomic) UIButton  *changeAxisBtn;
-@property (strong, nonatomic) UIButton  *centerSelectBtn;
+@property (strong, nonatomic) UIView        *dashBoardView;
+@property (strong, nonatomic) UIButton      *startLayoutBtn;
+@property (strong, nonatomic) UIButton      *changeAxisBtn;
+@property (strong, nonatomic) UIButton      *centerSelectBtn;
+@property (strong, nonatomic) UITextView    *explainTextView;
+
 
 @property (strong, nonatomic) ChangeValueWithBtnView *changeValue_gap;
 @property (strong, nonatomic) ChangeValueWithBtnView *changeValue_offStart;
