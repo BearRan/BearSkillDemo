@@ -9,18 +9,27 @@
 #import "BaseViewController.h"
 #import "AutoLayoutSubViews.h"
 
+static NSString *cell_autoLauoutSubViews = @"autoLauoutSubViews";
+
 @interface BaseViewController () <UITableViewDataSource, UITableViewDelegate>
 {
     UITableView *tableView;
+    NSArray     *tableDataArray;
 }
 
 @end
 
 @implementation BaseViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = YES;
+}
+
 - (void)viewDidLoad
 {
-
+    tableDataArray = [[NSArray alloc] initWithObjects:cell_autoLauoutSubViews, nil];
+    
     tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
     tableView.delegate = self;
     tableView.dataSource = self;
@@ -30,19 +39,25 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return [tableDataArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSInteger row = indexPath.row;
     UITableViewCell *cell = [[UITableViewCell alloc] init];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.text = tableDataArray[row];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
+    NSInteger row = indexPath.row;
+    
+    if ([tableDataArray[row] isEqualToString:cell_autoLauoutSubViews]) {
         AutoLayoutSubViews *destinationVC = [[AutoLayoutSubViews alloc] init];
         [self.navigationController pushViewController:destinationVC animated:YES];
     }
