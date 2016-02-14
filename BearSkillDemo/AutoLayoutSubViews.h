@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AutoLayoutSubViewsModelController.h"
 
-@interface AutoLayoutSubViews : UIViewController
+@interface AutoLayoutSubViews : AutoLayoutSubViewsModelController
 
 @end

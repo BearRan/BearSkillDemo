@@ -16,6 +16,8 @@
 		183532E51C648FFE00014B86 /* BearSkillDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 183532E41C648FFE00014B86 /* BearSkillDemoUITests.m */; };
 		18EC84CE1C701853009D3BD7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84CD1C701853009D3BD7 /* BaseViewController.m */; };
 		18EC84D11C701A1F009D3BD7 /* AutoLayoutSubViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84D01C701A1F009D3BD7 /* AutoLayoutSubViews.m */; };
+		18EC84D41C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84D31C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m */; };
+		18EC84D71C702C0D009D3BD7 /* ChangeValueWithBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84D61C702C0D009D3BD7 /* ChangeValueWithBtnView.m */; };
 		195858B0E99DF642EE8F12E9 /* libPods-BearSkillDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE325E485BC36FC154790270 /* libPods-BearSkillDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,10 @@
 		18EC84CD1C701853009D3BD7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		18EC84CF1C701A1F009D3BD7 /* AutoLayoutSubViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutSubViews.h; sourceTree = "<group>"; };
 		18EC84D01C701A1F009D3BD7 /* AutoLayoutSubViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutSubViews.m; sourceTree = "<group>"; };
+		18EC84D21C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutSubViewsModelController.h; sourceTree = "<group>"; };
+		18EC84D31C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayoutSubViewsModelController.m; sourceTree = "<group>"; };
+		18EC84D51C702C0D009D3BD7 /* ChangeValueWithBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeValueWithBtnView.h; sourceTree = "<group>"; };
+		18EC84D61C702C0D009D3BD7 /* ChangeValueWithBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeValueWithBtnView.m; sourceTree = "<group>"; };
 		4E4C0D6B317C6A312B1E9740 /* Pods-BearSkillDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearSkillDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BearSkillDemo/Pods-BearSkillDemo.release.xcconfig"; sourceTree = "<group>"; };
 		9EF10F427911159A8157CB51 /* Pods-BearSkillDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearSkillDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BearSkillDemo/Pods-BearSkillDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		AE325E485BC36FC154790270 /* libPods-BearSkillDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BearSkillDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +122,10 @@
 				183532C31C648FFE00014B86 /* AppDelegate.m */,
 				18EC84CC1C701853009D3BD7 /* BaseViewController.h */,
 				18EC84CD1C701853009D3BD7 /* BaseViewController.m */,
+				18EC84D21C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.h */,
+				18EC84D31C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m */,
+				18EC84D51C702C0D009D3BD7 /* ChangeValueWithBtnView.h */,
+				18EC84D61C702C0D009D3BD7 /* ChangeValueWithBtnView.m */,
 				18EC84CF1C701A1F009D3BD7 /* AutoLayoutSubViews.h */,
 				18EC84D01C701A1F009D3BD7 /* AutoLayoutSubViews.m */,
 				182E10A21C64A5FF00570002 /* PrefixHeader.pch */,
@@ -353,6 +363,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EC84D41C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m in Sources */,
+				18EC84D71C702C0D009D3BD7 /* ChangeValueWithBtnView.m in Sources */,
 				183532C41C648FFE00014B86 /* AppDelegate.m in Sources */,
 				18EC84CE1C701853009D3BD7 /* BaseViewController.m in Sources */,
 				18EC84D11C701A1F009D3BD7 /* AutoLayoutSubViews.m in Sources */,

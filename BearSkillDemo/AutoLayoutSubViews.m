@@ -8,18 +8,19 @@
 
 #import "AutoLayoutSubViews.h"
 
-@implementation AutoLayoutSubViews
-
-- (void)viewWillAppear:(BOOL)animated
+@interface AutoLayoutSubViews ()
 {
-    self.navigationController.navigationBarHidden = NO;
+    
 }
+
+@end
+
+@implementation AutoLayoutSubViews
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 @end
