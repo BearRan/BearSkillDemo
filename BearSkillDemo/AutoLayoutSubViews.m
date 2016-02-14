@@ -21,10 +21,10 @@
 {
     [super viewDidLoad];
     
-    self.showControl_gap        = NO;
+    self.showControl_gap        = YES;
     self.showControl_offStart   = NO;
     self.showControl_offEnd     = NO;
-    [self createDashBoard];
+    [self buildDashBoard];
 }
 
 @end

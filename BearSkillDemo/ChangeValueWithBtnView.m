@@ -10,6 +10,8 @@
 
 @implementation ChangeValueWithBtnView
 
+static float deltaValue = 0.5;
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -17,6 +19,7 @@
         self = nil;
     }
     
+    _value = 0;
     self.backgroundColor = [UIColor clearColor];
     [self createUI];
     
@@ -33,11 +36,12 @@
     _plusBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_height)];
     [_plusBtn setTitle:@"+" forState:UIControlStateNormal];
     [_plusBtn setMyBorder:[UIColor whiteColor] borderWidth:1.0f];
+    [_plusBtn addTarget:self action:@selector(plusBtn_Event) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_plusBtn];
     [subViewArray addObject:_plusBtn];
     
     _valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, btn_width, 30)];
-    _valueLabel.text = @"0.0";
+    _valueLabel.text = [NSString stringWithFormat:@"%.1f", _value];
     _valueLabel.textColor = [UIColor whiteColor];
     _valueLabel.textAlignment = NSTextAlignmentCenter;
     [_valueLabel setMyBorder:[UIColor whiteColor] borderWidth:1.0f];
@@ -47,6 +51,7 @@
     _minusBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_height)];
     [_minusBtn setTitle:@"-" forState:UIControlStateNormal];
     [_minusBtn setMyBorder:[UIColor whiteColor] borderWidth:1.0f];
+    [_minusBtn addTarget:self action:@selector(minusBtn_Event) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_minusBtn];
     [subViewArray addObject:_minusBtn];
     
@@ -56,6 +61,23 @@
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
+}
+
+- (void)plusBtn_Event
+{
+    _value = _value + deltaValue;
+    _valueLabel.text = [NSString stringWithFormat:@"%.1f", _value];
+}
+
+- (void)minusBtn_Event
+{
+    if (_value <= 0) {
+        _value = 0;
+        return;
+    }
+    
+    _value = _value - deltaValue;
+    _valueLabel.text = [NSString stringWithFormat:@"%.1f", _value];
 }
 
 @end

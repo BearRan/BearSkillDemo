@@ -21,15 +21,17 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    _dashBoardView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 120)];
+    _dashBoardView.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:_dashBoardView];
+    [_dashBoardView setMaxY:self.view.maxY];
+    
+    [self createPerformanceView];
 }
 
-- (void)createDashBoard
+- (void)buildDashBoard
 {
-    UIView *dashBoardView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 120)];
-    dashBoardView.backgroundColor = [UIColor orangeColor];
-    [self.view addSubview:dashBoardView];
-    [dashBoardView setMaxY:self.view.maxY];
-    
     CGFloat btn_height  = 30;
     UIFont  *textFont   = [UIFont systemFontOfSize:14.0f];
     
@@ -40,7 +42,8 @@
     _startLayoutBtn.titleLabel.font = textFont;
     [_startLayoutBtn sizeToFit];
     [_startLayoutBtn setHeight:btn_height];
-    [dashBoardView addSubview:_startLayoutBtn];
+    [_startLayoutBtn addTarget:self action:@selector(startLayoutBtn_Event:) forControlEvents:UIControlEventTouchUpInside];
+    [_dashBoardView addSubview:_startLayoutBtn];
     [subViewArray addObject:_startLayoutBtn];
     
     _changeAxisBtn = [[UIButton alloc] init];
@@ -48,7 +51,8 @@
     _changeAxisBtn.titleLabel.font = textFont;
     [_changeAxisBtn sizeToFit];
     [_changeAxisBtn setHeight:btn_height];
-    [dashBoardView addSubview:_changeAxisBtn];
+    [_changeAxisBtn addTarget:self action:@selector(changeAxisBtn_Event:) forControlEvents:UIControlEventTouchUpInside];
+    [_dashBoardView addSubview:_changeAxisBtn];
     [subViewArray addObject:_changeAxisBtn];
     
     _centerSelectBtn = [[UIButton alloc] init];
@@ -56,7 +60,8 @@
     _centerSelectBtn.titleLabel.font = textFont;
     [_centerSelectBtn sizeToFit];
     [_centerSelectBtn setHeight:btn_height];
-    [dashBoardView addSubview:_centerSelectBtn];
+    [_centerSelectBtn addTarget:self action:@selector(centerSelectBtn_Event:) forControlEvents:UIControlEventTouchUpInside];
+    [_dashBoardView addSubview:_centerSelectBtn];
     [subViewArray addObject:_centerSelectBtn];
     
     
@@ -67,19 +72,19 @@
     
     if (_showControl_gap == YES) {
         _changeValue_gap = [[ChangeValueWithBtnView alloc] initWithFrame:CGRectMake(0, 0, changeView_width, changeView_height)];
-        [dashBoardView addSubview:_changeValue_gap];
+        [_dashBoardView addSubview:_changeValue_gap];
         [subViewArray addObject:_changeValue_gap];
     }
     
     if (_showControl_offStart == YES) {
         _changeValue_offStart = [[ChangeValueWithBtnView alloc] initWithFrame:CGRectMake(0, 0, changeView_width, changeView_height)];
-        [dashBoardView addSubview:_changeValue_offStart];
+        [_dashBoardView addSubview:_changeValue_offStart];
         [subViewArray addObject:_changeValue_offStart];
     }
     
     if (_showControl_offEnd == YES) {
         _changeValue_offEnd = [[ChangeValueWithBtnView alloc] initWithFrame:CGRectMake(0, 0, changeView_width, changeView_height)];
-        [dashBoardView addSubview:_changeValue_offEnd];
+        [_dashBoardView addSubview:_changeValue_offEnd];
         [subViewArray addObject:_changeValue_offEnd];
     }
     
@@ -95,7 +100,7 @@
         _gapLabel.text = @"间距";
         _gapLabel.textColor = [UIColor whiteColor];
         _gapLabel.font = labelFont;
-        [dashBoardView addSubview:_gapLabel];
+        [_dashBoardView addSubview:_gapLabel];
         [_gapLabel BearSetRelativeLayoutWithDirection:kDIR_UP destinationView:_changeValue_gap parentRelation:NO distance:5.0f center:YES sizeToFit:YES];
     }
     
@@ -104,7 +109,7 @@
         _offStartLabel.text = @"offStart";
         _offStartLabel.textColor = [UIColor whiteColor];
         _offStartLabel.font = labelFont;
-        [dashBoardView addSubview:_offStartLabel];
+        [_dashBoardView addSubview:_offStartLabel];
         [_offStartLabel BearSetRelativeLayoutWithDirection:kDIR_UP destinationView:_changeValue_offStart parentRelation:NO distance:5.0f center:YES sizeToFit:YES];
     }
     
@@ -113,11 +118,52 @@
         _offEndLabel.text = @"offEnd";
         _offEndLabel.textColor = [UIColor whiteColor];
         _offEndLabel.font = labelFont;
-        [dashBoardView addSubview:_offEndLabel];
+        [_dashBoardView addSubview:_offEndLabel];
         [_offEndLabel BearSetRelativeLayoutWithDirection:kDIR_UP destinationView:_changeValue_offEnd parentRelation:NO distance:5.0f center:YES sizeToFit:YES];
     }
 
 }
+
+
+//  布局演示界面
+- (void)createPerformanceView
+{
+    CGFloat gapWidth    = 30;
+    CGFloat viewWidth   = 40;
+    CGFloat viewHeight  = 40;
+    
+    _canvasView = [[UIView alloc] initWithFrame:CGRectMake(gapWidth, NAV_STA + gapWidth, WIDTH - gapWidth * 2, _dashBoardView.y - NAV_STA - gapWidth * 2)];
+    _canvasView.backgroundColor = [UIColor colorWithRed:0 green:0.98 blue:0.4 alpha:1.0f];
+    [self.view addSubview:_canvasView];
+    
+    _subViewArray = [[NSMutableArray alloc] init];
+    NSArray *colcorArray = [[NSArray alloc] initWithObjects:
+                            [UIColor orangeColor],
+                            [UIColor yellowColor],
+                            [UIColor blueColor],
+                            [UIColor purpleColor],
+                            [UIColor grayColor],
+                            nil];
+    
+    for (int i = 0; i < [colcorArray count]; i++) {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(10 * i, 10 * i, viewWidth, viewHeight)];
+        view.backgroundColor = colcorArray[i];
+        [_canvasView addSubview:view];
+        [_subViewArray addObject:view];
+    }
+}
+
+
+//  点击事件
+- (void)startLayoutBtn_Event:(UIButton *)sender
+{}
+
+- (void)changeAxisBtn_Event:(UIButton *)sender
+{}
+
+- (void)centerSelectBtn_Event:(UIButton *)sender
+{}
+
 
 @end
 

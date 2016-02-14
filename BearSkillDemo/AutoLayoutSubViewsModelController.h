@@ -11,6 +11,8 @@
 
 @interface AutoLayoutSubViewsModelController : UIViewController
 
+//  DashBoard
+@property (strong, nonatomic) UIView    *dashBoardView;
 @property (strong, nonatomic) UIButton  *startLayoutBtn;
 @property (strong, nonatomic) UIButton  *changeAxisBtn;
 @property (strong, nonatomic) UIButton  *centerSelectBtn;
@@ -27,6 +29,11 @@
 @property (assign, nonatomic) BOOL  showControl_offStart;
 @property (assign, nonatomic) BOOL  showControl_offEnd;
 
-- (void)createDashBoard;
+- (void)buildDashBoard;
+
+
+//  Performance
+@property (strong, nonatomic) UIView            *canvasView;
+@property (strong, nonatomic) NSMutableArray    *subViewArray;
 
 @end

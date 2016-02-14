@@ -13,5 +13,6 @@
 @property (strong, nonatomic) UIButton  *plusBtn;
 @property (strong, nonatomic) UIButton  *minusBtn;
 @property (strong, nonatomic) UILabel   *valueLabel;
+@property (assign, nonatomic) CGFloat   value;
 
 @end
