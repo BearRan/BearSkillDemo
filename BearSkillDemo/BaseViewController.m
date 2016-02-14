@@ -1,50 +1,51 @@
 //
-//  ViewController.m
+//  BaseViewController.m
 //  BearSkillDemo
 //
-//  Created by apple on 16/2/5.
+//  Created by apple on 16/2/14.
 //  Copyright © 2016年 apple. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "BaseViewController.h"
+#import "AutoLayoutSubViews.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface BaseViewController () <UITableViewDataSource, UITableViewDelegate>
 {
     UITableView *tableView;
 }
 
 @end
 
-@implementation ViewController
+@implementation BaseViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, NAV_STA, WIDTH, HEIGHT - NAV_STA)];
-    tableView.dataSource = self;
+- (void)viewDidLoad
+{
+
+    tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
     tableView.delegate = self;
+    tableView.dataSource = self;
     tableView.tableFooterView = [UIView new];
     [self.view addSubview:tableView];
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc] init];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"---1");
+    if (indexPath.row == 0) {
+        AutoLayoutSubViews *destinationVC = [[AutoLayoutSubViews alloc] init];
+        [self.navigationController pushViewController:destinationVC animated:YES];
+    }
 }
 
 @end
