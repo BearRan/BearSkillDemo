@@ -164,6 +164,8 @@
     [UIView animateWithDuration:0.5f animations:^{
         if (_parentRelation == YES) {
             [_viewB BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
+            
+            _explainTextView.text = @"[_viewB BearSetCenterToParentViewWithAxis:kAXIS_X_Y];";
         }else{
             nil;
         }
@@ -179,6 +181,7 @@
         [_viewB BearSetRelativeLayoutWithDirection:kDIR_LEFT destinationView:_viewA parentRelation:NO distance:10 center:YES];
         [sender setTitle:@"非父子类关系" forState:UIControlStateNormal];
         [sender sizeToFit];
+        _explainTextView.text = @"";
     }
     else{
         _parentRelation = YES;
@@ -187,6 +190,7 @@
         [_viewB BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
         [sender setTitle:@"父子类关系" forState:UIControlStateNormal];
         [sender sizeToFit];
+        _explainTextView.text = @"";
     }
 }
 
@@ -206,13 +210,38 @@
 
 - (void)updateLayOut
 {
+    NSString *dirStr;
+    __block NSString *destinationViewStr;
+    __block NSString *parentRelationStr;
+    NSString *distanceStr = [NSString stringWithFormat:@"%.1f", _changeValueBtn.value];
+    NSString *centerStr = (_center == YES) ? @"YES" : @"NO";
+    
+    switch (_dir) {
+        case kDIR_UP:       dirStr = @"kDIR_UP";        break;
+        case kDIR_DOWN:     dirStr = @"kDIR_DOWN";      break;
+        case kDIR_LEFT:     dirStr = @"kDIR_LEFT";      break;
+        case kDIR_RIGHT:    dirStr = @"kDIR_RIGHT";     break;
+            
+        default:
+            break;
+    }
+    
     [UIView animateWithDuration:0.5f animations:^{
         if (_parentRelation == YES) {
+            destinationViewStr  = @"nil";
+            parentRelationStr   = @"YES";
+            
             [_viewB BearSetRelativeLayoutWithDirection:_dir destinationView:nil parentRelation:YES distance:_changeValueBtn.value center:_center];
         }else{
+            destinationViewStr  = @"_viewA";
+            parentRelationStr   = @"NO";
+            
             [_viewB BearSetRelativeLayoutWithDirection:_dir destinationView:_viewA parentRelation:NO distance:_changeValueBtn.value center:_center];
         }
     }];
+    
+    NSString *explainStr = [NSString stringWithFormat:@"[_viewB BearSetRelativeLayoutWithDirection:%@ destinationView:%@ parentRelation:%@ distance:%@ center:%@];", dirStr, destinationViewStr, parentRelationStr, distanceStr, centerStr];
+    _explainTextView.text = explainStr;
 }
 
 
