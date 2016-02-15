@@ -11,7 +11,7 @@
 #import "AutoLayoutSubViewController2.h"
 #import "AutoLayoutSubViewController3.h"
 #import "AutoLayoutSubViewController4.h"
-#import "RelativeLayoutControllerSameLevel.h"
+#import "RelativeLayoutController.h"
 
 static NSString *cell_autoLayoutSubViews1 = @"AutoLayoutSubViewController1";
 static NSString *cell_autoLayoutSubViews2 = @"AutoLayoutSubViewController2";
@@ -111,7 +111,7 @@ static NSString *cell_relativeLayoutSameLevel = @"RelativeLayoutSameLevel";
     }
     
     else if ([tableDataArray[row] isEqualToString:cell_relativeLayoutSameLevel]){
-        RelativeLayoutControllerSameLevel *destinationVC = [[RelativeLayoutControllerSameLevel alloc] init];
+        RelativeLayoutController *destinationVC = [[RelativeLayoutController alloc] init];
         [self.navigationController pushViewController:destinationVC animated:YES];
     }
 }

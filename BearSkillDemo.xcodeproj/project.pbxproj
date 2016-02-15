@@ -15,7 +15,6 @@
 		183532DA1C648FFE00014B86 /* BearSkillDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 183532D91C648FFE00014B86 /* BearSkillDemoTests.m */; };
 		183532E51C648FFE00014B86 /* BearSkillDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 183532E41C648FFE00014B86 /* BearSkillDemoUITests.m */; };
 		186F4F891C7088BD0036DCC5 /* RelativeLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186F4F881C7088BD0036DCC5 /* RelativeLayoutController.m */; };
-		186F4F8C1C7088F60036DCC5 /* RelativeLayoutControllerSameLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 186F4F8B1C7088F60036DCC5 /* RelativeLayoutControllerSameLevel.m */; };
 		18EC84CE1C701853009D3BD7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84CD1C701853009D3BD7 /* BaseViewController.m */; };
 		18EC84D41C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84D31C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m */; };
 		18EC84D71C702C0D009D3BD7 /* ChangeValueWithBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84D61C702C0D009D3BD7 /* ChangeValueWithBtnView.m */; };
@@ -61,8 +60,6 @@
 		183532E61C648FFE00014B86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		186F4F871C7088BD0036DCC5 /* RelativeLayoutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelativeLayoutController.h; sourceTree = "<group>"; };
 		186F4F881C7088BD0036DCC5 /* RelativeLayoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelativeLayoutController.m; sourceTree = "<group>"; };
-		186F4F8A1C7088F60036DCC5 /* RelativeLayoutControllerSameLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelativeLayoutControllerSameLevel.h; sourceTree = "<group>"; };
-		186F4F8B1C7088F60036DCC5 /* RelativeLayoutControllerSameLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelativeLayoutControllerSameLevel.m; sourceTree = "<group>"; };
 		18EC84CC1C701853009D3BD7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		18EC84CD1C701853009D3BD7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		18EC84D21C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutSubViewsModelController.h; sourceTree = "<group>"; };
@@ -137,7 +134,8 @@
 				183532C31C648FFE00014B86 /* AppDelegate.m */,
 				18EC84CC1C701853009D3BD7 /* BaseViewController.h */,
 				18EC84CD1C701853009D3BD7 /* BaseViewController.m */,
-				18EC84E41C706961009D3BD7 /* BearLayoutModelView */,
+				18C2F9C31C71A6B900C35795 /* BearRelativeLayout */,
+				18EC84E41C706961009D3BD7 /* BearLayoutSubView */,
 				18EC84E51C706973009D3BD7 /* AutoLayoutSubViewsModelController */,
 				182E10A21C64A5FF00570002 /* PrefixHeader.pch */,
 				183532C81C648FFE00014B86 /* Main.storyboard */,
@@ -175,19 +173,24 @@
 			path = BearSkillDemoUITests;
 			sourceTree = "<group>";
 		};
-		18EC84E41C706961009D3BD7 /* BearLayoutModelView */ = {
+		18C2F9C31C71A6B900C35795 /* BearRelativeLayout */ = {
+			isa = PBXGroup;
+			children = (
+				186F4F871C7088BD0036DCC5 /* RelativeLayoutController.h */,
+				186F4F881C7088BD0036DCC5 /* RelativeLayoutController.m */,
+			);
+			name = BearRelativeLayout;
+			sourceTree = "<group>";
+		};
+		18EC84E41C706961009D3BD7 /* BearLayoutSubView */ = {
 			isa = PBXGroup;
 			children = (
 				18EC84D51C702C0D009D3BD7 /* ChangeValueWithBtnView.h */,
 				18EC84D61C702C0D009D3BD7 /* ChangeValueWithBtnView.m */,
 				18EC84D21C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.h */,
 				18EC84D31C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m */,
-				186F4F871C7088BD0036DCC5 /* RelativeLayoutController.h */,
-				186F4F881C7088BD0036DCC5 /* RelativeLayoutController.m */,
-				186F4F8A1C7088F60036DCC5 /* RelativeLayoutControllerSameLevel.h */,
-				186F4F8B1C7088F60036DCC5 /* RelativeLayoutControllerSameLevel.m */,
 			);
-			name = BearLayoutModelView;
+			name = BearLayoutSubView;
 			sourceTree = "<group>";
 		};
 		18EC84E51C706973009D3BD7 /* AutoLayoutSubViewsModelController */ = {
@@ -410,7 +413,6 @@
 				18EC84DD1C706897009D3BD7 /* AutoLayoutSubViewController2.m in Sources */,
 				183532C41C648FFE00014B86 /* AppDelegate.m in Sources */,
 				18EC84CE1C701853009D3BD7 /* BaseViewController.m in Sources */,
-				186F4F8C1C7088F60036DCC5 /* RelativeLayoutControllerSameLevel.m in Sources */,
 				18EC84E31C7068A9009D3BD7 /* AutoLayoutSubViewController4.m in Sources */,
 				186F4F891C7088BD0036DCC5 /* RelativeLayoutController.m in Sources */,
 				183532C11C648FFE00014B86 /* main.m in Sources */,
