@@ -36,6 +36,7 @@
 {
     //  代码说明TextView
     _explainTextView = [[UITextView alloc] initWithFrame:CGRectMake(10, _dashBoardView.y - 60 - 5, WIDTH - 20, 60)];
+    _explainTextView.editable = NO;
     _explainTextView.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:_explainTextView];
     

@@ -61,7 +61,7 @@
     CGFloat btn_height  = 20;
     UIFont  *btnFont    = [UIFont systemFontOfSize:13.0f];
     
-    //  设置方向
+    //  设置方向 按钮
     _upBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_height)];
     [_upBtn setTitle:@"Up" forState:UIControlStateNormal];
     _upBtn.titleLabel.font = btnFont;
@@ -98,7 +98,7 @@
     [_centerBtn BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
     
     
-    //  设置父子关系
+    //  设置父子关系 按钮
     _parentRelation = YES;
     _parentRelationBtn = [[UIButton alloc] init];
     [_parentRelationBtn setTitle:@"父子类关系" forState:UIControlStateNormal];
@@ -108,9 +108,9 @@
     [_parentRelationBtn BearSetRelativeLayoutWithDirection:kDIR_RIGHT destinationView:leftDashView parentRelation:NO distance:20 center:YES sizeToFit:YES];
     
     
-    //  设置居中关系
+    //  设置居中关系 按钮
     _center = YES;
-    _centerRelationBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, btn_height)];
+    _centerRelationBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, btn_height)];
     [_centerRelationBtn setTitle:@"居中" forState:UIControlStateNormal];
     _centerRelationBtn.titleLabel.font = btnFont;
     [_centerRelationBtn addTarget:self action:@selector(centerRelationBtn_Event:) forControlEvents:UIControlEventTouchUpInside];
@@ -118,7 +118,7 @@
     [_centerRelationBtn BearSetRelativeLayoutWithDirection:kDIR_RIGHT destinationView:_parentRelationBtn parentRelation:NO distance:20 center:YES];
     
     
-    //  控制相对距离
+    //  控制相对距离 按钮
     _changeValueBtn = [[ChangeValueWithBtnView alloc] initWithFrame:CGRectMake(0, 0, 40, 80)];
     [_dashBoardView addSubview:_changeValueBtn];
     [_changeValueBtn BearSetRelativeLayoutWithDirection:kDIR_RIGHT destinationView:nil parentRelation:YES distance:20 center:YES];
@@ -129,6 +129,13 @@
     noticeLabel.font = [UIFont systemFontOfSize:14.0f];
     [_dashBoardView addSubview:noticeLabel];
     [noticeLabel BearSetRelativeLayoutWithDirection:kDIR_UP destinationView:_changeValueBtn parentRelation:NO distance:0 center:YES sizeToFit:YES];
+    
+    
+    //  代码说明TextView
+    _explainTextView = [[UITextView alloc] initWithFrame:CGRectMake(10, _dashBoardView.y - 60 - 5, WIDTH - 20, 60)];
+    _explainTextView.editable = NO;
+    _explainTextView.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:_explainTextView];
 }
 
 
@@ -167,17 +174,19 @@
 {
     if (_parentRelation == YES) {
         _parentRelation = NO;
+        
         [self.view addSubview:_viewB];
+        [_viewB BearSetRelativeLayoutWithDirection:kDIR_LEFT destinationView:_viewA parentRelation:NO distance:10 center:YES];
         [sender setTitle:@"非父子类关系" forState:UIControlStateNormal];
         [sender sizeToFit];
-        [self updateLayOut];
     }
     else{
         _parentRelation = YES;
+        
         [_viewA addSubview:_viewB];
+        [_viewB BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
         [sender setTitle:@"父子类关系" forState:UIControlStateNormal];
         [sender sizeToFit];
-        [self updateLayOut];
     }
 }
 
@@ -186,13 +195,11 @@
     if (_center == YES) {
         _center = NO;
         [sender setTitle:@"不居中" forState:UIControlStateNormal];
-        [sender sizeToFit];
         [self updateLayOut];
     }
     else{
         _center = YES;
         [sender setTitle:@"居中" forState:UIControlStateNormal];
-        [sender sizeToFit];
         [self updateLayOut];
     }
 }
@@ -206,6 +213,34 @@
             [_viewB BearSetRelativeLayoutWithDirection:_dir destinationView:_viewA parentRelation:NO distance:_changeValueBtn.value center:_center];
         }
     }];
+}
+
+
+/**
+ *  最简代码使用demo (不能运行，只能说明最简使用方法)
+ */
+- (void)simpleCodeExplain
+{
+    //  父子类关系
+    _viewA = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    [self.view addSubview:_viewA];
+    
+    _viewB = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [_viewA addSubview:_viewB];
+    
+    [_viewB BearSetRelativeLayoutWithDirection:kDIR_RIGHT destinationView:nil parentRelation:YES distance:10 center:YES];
+    
+    
+    
+    
+    //  同一视图层关系
+    _viewA = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    [self.view addSubview:_viewA];
+    
+    _viewB = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [self.view addSubview:_viewB];
+    
+    [_viewB BearSetRelativeLayoutWithDirection:kDIR_RIGHT destinationView:_viewA parentRelation:NO distance:10 center:YES];
 }
 
 @end

@@ -21,6 +21,7 @@
 @property (strong, nonatomic) UIButton      *parentRelationBtn;
 @property (strong, nonatomic) UIButton      *centerRelationBtn;
 @property (strong, nonatomic) ChangeValueWithBtnView    *changeValueBtn;
+@property (strong, nonatomic) UITextView    *explainTextView;
 
 //  Performance
 @property (strong, nonatomic) UIView        *viewA;
