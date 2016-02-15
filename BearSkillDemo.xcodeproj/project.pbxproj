@@ -559,9 +559,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BearSkillDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = BearSkillDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yuntu.text.BearSkillDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xr.text.BearSkillDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -574,9 +574,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BearSkillDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = BearSkillDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yuntu.text.BearSkillDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xr.text.BearSkillDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
