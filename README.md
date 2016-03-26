@@ -18,8 +18,12 @@ BearSkillPod名称：BearSkill
 ## 多个子类view布局方法
 
 项目中经常会有多个子类view按照某个方向等间距布局这种情况。针对这种情况，特有如下四种方法。一切尽在gif和demo中，大家自己理解下。demo的界面上也有方法名称和适用场景说明。
+
  //
+ 
  //  根据子view自动布局 自动计算:起始点，结束点，间距（三值相等）
+ 
  //  说明： 在父类view尺寸不等于需求尺寸时，会显示日志并且取消布局
+ 
  //
 `+ (void)BearAutoLayViewArray:(NSMutableArray *)viewArray layoutAxis:(kLAYOUT_AXIS)layoutAxis center:(BOOL)center;`
