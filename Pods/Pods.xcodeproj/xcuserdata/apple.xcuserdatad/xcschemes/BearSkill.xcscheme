@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D2679A6451372D16F6683C86'
+               BlueprintIdentifier = '8D5B88CEA0BB441E99EF6865'
                BlueprintName = 'BearSkill'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libBearSkill.a'>
