@@ -14,6 +14,7 @@
 		183532DA1C648FFE00014B86 /* BearSkillDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 183532D91C648FFE00014B86 /* BearSkillDemoTests.m */; };
 		183532E51C648FFE00014B86 /* BearSkillDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 183532E41C648FFE00014B86 /* BearSkillDemoUITests.m */; };
 		186F4F891C7088BD0036DCC5 /* RelativeLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186F4F881C7088BD0036DCC5 /* RelativeLayoutController.m */; };
+		187C854D1CE9A1A5001EA35F /* UITextField_LimitLength.m in Sources */ = {isa = PBXBuildFile; fileRef = 187C854C1CE9A1A5001EA35F /* UITextField_LimitLength.m */; };
 		18EC84CE1C701853009D3BD7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84CD1C701853009D3BD7 /* BaseViewController.m */; };
 		18EC84D41C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84D31C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.m */; };
 		18EC84D71C702C0D009D3BD7 /* ChangeValueWithBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC84D61C702C0D009D3BD7 /* ChangeValueWithBtnView.m */; };
@@ -58,6 +59,8 @@
 		183532E61C648FFE00014B86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		186F4F871C7088BD0036DCC5 /* RelativeLayoutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelativeLayoutController.h; sourceTree = "<group>"; };
 		186F4F881C7088BD0036DCC5 /* RelativeLayoutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelativeLayoutController.m; sourceTree = "<group>"; };
+		187C854B1CE9A1A5001EA35F /* UITextField_LimitLength.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextField_LimitLength.h; sourceTree = "<group>"; };
+		187C854C1CE9A1A5001EA35F /* UITextField_LimitLength.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextField_LimitLength.m; sourceTree = "<group>"; };
 		18EC84CC1C701853009D3BD7 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		18EC84CD1C701853009D3BD7 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		18EC84D21C7029CC009D3BD7 /* AutoLayoutSubViewsModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayoutSubViewsModelController.h; sourceTree = "<group>"; };
@@ -132,9 +135,7 @@
 				183532C31C648FFE00014B86 /* AppDelegate.m */,
 				18EC84CC1C701853009D3BD7 /* BaseViewController.h */,
 				18EC84CD1C701853009D3BD7 /* BaseViewController.m */,
-				18C2F9C31C71A6B900C35795 /* BearRelativeLayout */,
-				18EC84E41C706961009D3BD7 /* BearLayoutSubView */,
-				18EC84E51C706973009D3BD7 /* AutoLayoutSubViewsModelController */,
+				187C85481CE9A0C4001EA35F /* Introduction */,
 				182E10A21C64A5FF00570002 /* PrefixHeader.pch */,
 				183532C81C648FFE00014B86 /* Main.storyboard */,
 				183532CB1C648FFE00014B86 /* Assets.xcassets */,
@@ -168,6 +169,34 @@
 				183532E61C648FFE00014B86 /* Info.plist */,
 			);
 			path = BearSkillDemoUITests;
+			sourceTree = "<group>";
+		};
+		187C85481CE9A0C4001EA35F /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				187C85491CE9A0D1001EA35F /* About_UIView+BearSet */,
+				187C854A1CE9A0E7001EA35F /* About_UITextField+BearSet */,
+			);
+			name = Introduction;
+			sourceTree = "<group>";
+		};
+		187C85491CE9A0D1001EA35F /* About_UIView+BearSet */ = {
+			isa = PBXGroup;
+			children = (
+				18C2F9C31C71A6B900C35795 /* BearRelativeLayout */,
+				18EC84E41C706961009D3BD7 /* BearLayoutSubView */,
+				18EC84E51C706973009D3BD7 /* AutoLayoutSubViewsModelController */,
+			);
+			name = "About_UIView+BearSet";
+			sourceTree = "<group>";
+		};
+		187C854A1CE9A0E7001EA35F /* About_UITextField+BearSet */ = {
+			isa = PBXGroup;
+			children = (
+				187C854B1CE9A1A5001EA35F /* UITextField_LimitLength.h */,
+				187C854C1CE9A1A5001EA35F /* UITextField_LimitLength.m */,
+			);
+			name = "About_UITextField+BearSet";
 			sourceTree = "<group>";
 		};
 		18C2F9C31C71A6B900C35795 /* BearRelativeLayout */ = {
@@ -409,6 +438,7 @@
 				18EC84DD1C706897009D3BD7 /* AutoLayoutSubViewController2.m in Sources */,
 				183532C41C648FFE00014B86 /* AppDelegate.m in Sources */,
 				18EC84CE1C701853009D3BD7 /* BaseViewController.m in Sources */,
+				187C854D1CE9A1A5001EA35F /* UITextField_LimitLength.m in Sources */,
 				18EC84E31C7068A9009D3BD7 /* AutoLayoutSubViewController4.m in Sources */,
 				186F4F891C7088BD0036DCC5 /* RelativeLayoutController.m in Sources */,
 				183532C11C648FFE00014B86 /* main.m in Sources */,
