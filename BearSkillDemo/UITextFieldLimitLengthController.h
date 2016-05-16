@@ -1,5 +1,5 @@
 //
-//  UITextField_LimitLength.h
+//  UITextFieldLimitLengthController.h
 //  BearSkillDemo
 //
 //  Created by apple on 16/5/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITextField_LimitLength : UIViewController
+@interface UITextFieldLimitLengthController : UIViewController
 
 @end
